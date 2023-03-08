@@ -33,7 +33,7 @@ import org.springframework.samples.petclinic.rest.dto.PetFieldsDto;
 import org.springframework.samples.petclinic.rest.dto.VisitDto;
 import org.springframework.samples.petclinic.rest.dto.VisitFieldsDto;
 import org.springframework.samples.petclinic.service.ClinicService;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -76,7 +76,7 @@ public class OwnerRestController implements OwnersApi {
         this.scheduler = scheduler;
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<List<OwnerDto>>> listOwners(String lastName) {
         return wrapBlockingCall(() -> {
@@ -93,7 +93,7 @@ public class OwnerRestController implements OwnersApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<OwnerDto>> getOwner(Integer ownerId) {
         return wrapBlockingCall(() -> {
@@ -105,7 +105,7 @@ public class OwnerRestController implements OwnersApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<OwnerDto>> addOwner(OwnerFieldsDto ownerFieldsDto) {
         return wrapBlockingCall(() -> {
@@ -119,7 +119,7 @@ public class OwnerRestController implements OwnersApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<OwnerDto>> updateOwner(Integer ownerId, OwnerFieldsDto ownerFieldsDto) {
         return wrapBlockingCall(() -> {
@@ -137,7 +137,7 @@ public class OwnerRestController implements OwnersApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<PetDto>> addPetToOwner(Integer ownerId, PetFieldsDto petFieldsDto) {
         return wrapBlockingCall(() -> {
@@ -154,7 +154,7 @@ public class OwnerRestController implements OwnersApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<VisitDto>> addVisitToOwner(Integer ownerId, Integer petId, VisitFieldsDto visitFieldsDto) {
         return wrapBlockingCall(() -> {

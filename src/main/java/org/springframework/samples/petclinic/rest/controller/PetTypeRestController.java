@@ -25,7 +25,7 @@ import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.rest.api.PettypesApi;
 import org.springframework.samples.petclinic.rest.dto.PetTypeDto;
 import org.springframework.samples.petclinic.service.ClinicService;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,7 +53,7 @@ public class PetTypeRestController implements PettypesApi {
         this.scheduler = scheduler;
     }
 
-    @PreAuthorize("hasAnyRole(@roles.OWNER_ADMIN, @roles.VET_ADMIN)")
+//    @PreAuthorize("hasAnyRole(@roles.OWNER_ADMIN, @roles.VET_ADMIN)")
     @Override
     public Mono<ResponseEntity<List<PetTypeDto>>> listPetTypes() {
         return wrapBlockingCall(() -> {
@@ -65,7 +65,7 @@ public class PetTypeRestController implements PettypesApi {
         });
     }
 
-    @PreAuthorize("hasAnyRole(@roles.OWNER_ADMIN, @roles.VET_ADMIN)")
+//    @PreAuthorize("hasAnyRole(@roles.OWNER_ADMIN, @roles.VET_ADMIN)")
     @Override
     public Mono<ResponseEntity<PetTypeDto>> getPetType(Integer petTypeId) {
         return wrapBlockingCall(() -> {
@@ -77,7 +77,7 @@ public class PetTypeRestController implements PettypesApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
     @Override
     public Mono<ResponseEntity<PetTypeDto>> addPetType(PetTypeDto petTypeDto) {
         return wrapBlockingCall(() -> {
@@ -89,7 +89,7 @@ public class PetTypeRestController implements PettypesApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
     @Override
     public Mono<ResponseEntity<PetTypeDto>> updatePetType(Integer petTypeId, PetTypeDto petTypeDto) {
         return wrapBlockingCall(() -> {
@@ -103,7 +103,7 @@ public class PetTypeRestController implements PettypesApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.VET_ADMIN)")
     @Transactional
     @Override
     public Mono<ResponseEntity<PetTypeDto>> deletePetType(Integer petTypeId) {

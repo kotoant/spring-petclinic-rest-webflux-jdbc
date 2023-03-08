@@ -25,7 +25,7 @@ import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.rest.api.VisitsApi;
 import org.springframework.samples.petclinic.rest.dto.VisitDto;
 import org.springframework.samples.petclinic.service.ClinicService;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,7 +59,7 @@ public class VisitRestController implements VisitsApi {
     }
 
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<List<VisitDto>>> listVisits() {
         return wrapBlockingCall(() -> {
@@ -71,7 +71,7 @@ public class VisitRestController implements VisitsApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<VisitDto>> getVisit(Integer visitId) {
         return wrapBlockingCall(() -> {
@@ -83,7 +83,7 @@ public class VisitRestController implements VisitsApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<VisitDto>> addVisit(VisitDto visitDtoArg) {
         return wrapBlockingCall(() -> {
@@ -97,7 +97,7 @@ public class VisitRestController implements VisitsApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Override
     public Mono<ResponseEntity<VisitDto>> updateVisit(Integer visitId, VisitDto visitDto) {
         return wrapBlockingCall(() -> {
@@ -112,7 +112,7 @@ public class VisitRestController implements VisitsApi {
         });
     }
 
-    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
+//    @PreAuthorize("hasRole(@roles.OWNER_ADMIN)")
     @Transactional
     @Override
     public Mono<ResponseEntity<VisitDto>> deleteVisit(Integer visitId) {
